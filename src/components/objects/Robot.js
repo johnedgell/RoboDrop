@@ -53,7 +53,10 @@ export default class Robot {
 
         if (this.grid.checkPosition(this.position)) {
             this.onGrid = true
+            return true
         }
+
+        return false
 
     }
 
@@ -75,6 +78,7 @@ export default class Robot {
     }
 
     moveRobot() {
+
         let newPosition = { ...this.position }
 
         if (this.direction === "NORTH") {
@@ -88,10 +92,12 @@ export default class Robot {
         }
 
         if (!this.grid.checkPosition(newPosition)) {
-            console.log('FALSE MOVE')
+           return false
         } else {
             this.position = { ...newPosition }
+            return true
         }
+
     }
 
     report() {

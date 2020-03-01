@@ -25,7 +25,7 @@ export default function ControlPanel(props) {
 
       </div>
       <div className="submit-button">
-        <button onClick={sendData}>Submit</button>
+        <button onClick={sendData}>Send Commands</button>
       </div>
     </div>
 
