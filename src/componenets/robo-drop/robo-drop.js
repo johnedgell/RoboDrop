@@ -36,7 +36,7 @@ export default class RoboDrop extends Component {
             <div className="App">
                 <Layout
                     lower={<ControlPanel input={input} sendInstructions={this.sendInstructions} />}
-                    left={<div>{output}</div>}
+                    output={<div>{output}</div>}
                 />
             </div>
         )

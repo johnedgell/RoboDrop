@@ -8,7 +8,7 @@ export default function Layout(props) {
     		{props.left}
     	</div>
     	<div className="right-column">
-    		<div className="upper">{props.right}</div>
+    		<div className="output">{props.output}</div>
             <div className="lower">
                 {props.lower}
             </div>

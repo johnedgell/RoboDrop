@@ -1,7 +1,8 @@
 .control-panel-container{
 	display:flex;
 	flex-direction: column;
-	height:100%;
+	height:300px;
+	width:700px;
 
 }
 
