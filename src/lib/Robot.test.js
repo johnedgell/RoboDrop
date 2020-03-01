@@ -21,41 +21,52 @@ test(' it should return true of the robot is placed in the valid square ', () =>
 
 })
 
-test(' it should  be able to rotate through all directions +1 in a clockwise direction', () => {
+describe('rotate clockwise', () => {
+    test('NORTH', () => {
+        robot.placeRobot('PLACE 2,2,WEST');
+        robot.turnRobot("RIGHT")
+        expect(robot.direction).toBe("NORTH");
+    });
+    test('EAST', () => {
+        robot.placeRobot('PLACE 2,2,NORTH');
+        robot.turnRobot("RIGHT")
+        expect(robot.direction).toBe("EAST");
+    });
+    test('SOUTH', () => {
+        robot.placeRobot('PLACE 2,2,EAST');
+        robot.turnRobot("RIGHT")
+        expect(robot.direction).toBe("SOUTH");
+    });
+    test('WEST', () => {
+        robot.placeRobot('PLACE 2,2,SOUTH');
+        robot.turnRobot("RIGHT")
+        expect(robot.direction).toBe("WEST");
+    });
+});
 
-    robot.placeRobot('PLACE 2,2,WEST')
-
-    robot.turnRobot("RIGHT")
-    expect(robot.direction).toBe("NORTH")
-    robot.turnRobot("RIGHT")
-    expect(robot.direction).toBe("EAST")
-    robot.turnRobot("RIGHT")
-    expect(robot.direction).toBe("SOUTH")
-    robot.turnRobot("RIGHT")
-    expect(robot.direction).toBe("WEST")
-    robot.turnRobot("RIGHT")
-    expect(robot.direction).toBe("NORTH")
-
-})
-
-test(' it should  be able to rotate through all directions +1 in a counterclockwise direction', () => {
-
-    robot.placeRobot('PLACE 2,2,EAST')
-
-    robot.turnRobot("LEFT")
-    expect(robot.direction).toBe("NORTH")
-    robot.turnRobot("LEFT")
-    expect(robot.direction).toBe("WEST")
-    robot.turnRobot("LEFT")
-    expect(robot.direction).toBe("SOUTH")
-    robot.turnRobot("LEFT")
-    expect(robot.direction).toBe("EAST")
-    robot.turnRobot("LEFT")
-    expect(robot.direction).toBe("NORTH")
-
-})
-
-
+describe('rotate anti-clockwise', () => {
+    test('NORTH', () => {
+        robot.placeRobot('PLACE 2,2,EAST');
+        robot.turnRobot("LEFT")
+        expect(robot.direction).toBe("NORTH");
+    });
+    test('WEST', () => {
+        robot.placeRobot('PLACE 2,2,NORTH');
+        robot.turnRobot("LEFT")
+        expect(robot.direction).toBe("WEST");
+    });
+    
+    test('SOUTH', () => {
+        robot.placeRobot('PLACE 2,2,WEST');
+        robot.turnRobot("LEFT")
+        expect(robot.direction).toBe("SOUTH");
+    });
+    test('EAST', () => {
+        robot.placeRobot('PLACE 2,2,SOUTH');
+        robot.turnRobot("LEFT")
+        expect(robot.direction).toBe("EAST");
+    });
+});
 
 
 test(' it should  move north', () => {
