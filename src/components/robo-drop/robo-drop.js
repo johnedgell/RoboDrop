@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Layout from '../layout/layout'
 import ControlPanel from '../control-panel/control-panel'
-import Robot from '../objects/Robot.js'
-import TableTop from '../objects/TableTop.js'
+import Robot from '../../lib/Robot.js'
+import TableTop from '../../lib/TableTop.js'
 import { scenarioThree } from '../../input-data/data-sets'
 import './style.css'
 
