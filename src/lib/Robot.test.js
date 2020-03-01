@@ -26,11 +26,14 @@ test(' it should  be able to rotate through all directions +1 in a clockwise dir
     robot.placeRobot('PLACE 2,2,WEST')
 
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("NORTH")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("EAST")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("SOUTH")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("WEST")
     robot.turnRobot("RIGHT")
-
     expect(robot.direction).toBe("NORTH")
 
 })
@@ -40,11 +43,14 @@ test(' it should  be able to rotate through all directions +1 in a counterclockw
     robot.placeRobot('PLACE 2,2,EAST')
 
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("NORTH")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("WEST")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("SOUTH")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("EAST")
     robot.turnRobot("LEFT")
-
     expect(robot.direction).toBe("NORTH")
 
 })
@@ -60,11 +66,7 @@ test(' it should  move north', () => {
 })
 
 test(' it should not move north if the move is out of bounds', () => {
-    robot.placeRobot('PLACE 1,2,NORTH')
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
+    robot.placeRobot('PLACE 1,4,NORTH')
     robot.moveRobot()
     expect(robot.position.y).toBe(4)
 
@@ -73,17 +75,14 @@ test(' it should not move north if the move is out of bounds', () => {
 test(' it should  move south', () => {
     robot.placeRobot('PLACE 2,2,SOUTH')
     robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    expect(robot.position.y).toBe(0)
+
+    expect(robot.position.y).toBe(1)
 })
 
 test(' it should not move south if the move is out of bounds', () => {
-    robot.placeRobot('PLACE 2,2,SOUTH')
+    robot.placeRobot('PLACE 2,0,SOUTH')
     robot.moveRobot()
-    expect(robot.position.y).toBe(1)
+    expect(robot.position.y).toBe(0)
 })
 
 test(' it should  move east', () => {
@@ -94,11 +93,7 @@ test(' it should  move east', () => {
 })
 
 test(' it should not move east if the move is out of bounds', () => {
-    robot.placeRobot('PLACE 2,2,EAST')
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
+    robot.placeRobot('PLACE 4,4,EAST')
     robot.moveRobot()
     expect(robot.position.x).toBe(4)
 })
@@ -110,11 +105,7 @@ test(' it should  move west', () => {
 })
 
 test(' it should not move west if the move is out of bounds', () => {
-    robot.placeRobot('PLACE 2,2,WEST')
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
-    robot.moveRobot()
+    robot.placeRobot('PLACE 0,2,WEST')
     robot.moveRobot()
     expect(robot.position.x).toBe(0)
 })

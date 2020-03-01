@@ -77,7 +77,7 @@ export default class Robot {
 
     }
 
-    moveRobot() {
+    moveRobot() { 
 
         let newPosition = { ...this.position }
 
@@ -101,7 +101,7 @@ export default class Robot {
     }
 
     report() {
-        return `${this.position.x},${this.position.y},${this.direction}`
+        return `Output: ${this.position.x},${this.position.y},${this.direction}`
     }
 
 }
