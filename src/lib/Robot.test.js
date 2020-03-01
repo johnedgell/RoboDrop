@@ -26,11 +26,14 @@ test(' it should  be able to rotate through all directions +1 in a clockwise dir
     robot.placeRobot('PLACE 2,2,WEST')
 
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("NORTH")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("EAST")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("SOUTH")
     robot.turnRobot("RIGHT")
+    expect(robot.direction).toBe("WEST")
     robot.turnRobot("RIGHT")
-
     expect(robot.direction).toBe("NORTH")
 
 })
@@ -40,11 +43,14 @@ test(' it should  be able to rotate through all directions +1 in a counterclockw
     robot.placeRobot('PLACE 2,2,EAST')
 
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("NORTH")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("WEST")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("SOUTH")
     robot.turnRobot("LEFT")
+    expect(robot.direction).toBe("EAST")
     robot.turnRobot("LEFT")
-
     expect(robot.direction).toBe("NORTH")
 
 })
